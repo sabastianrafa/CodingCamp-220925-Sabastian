@@ -1,12 +1,41 @@
+//navbar scroll
+const navbar = document.getElementById("navbar");
 window.addEventListener("scroll", () => {
   if (window.scrollY > 50) {
-    navbar.classList.add("bg-slate-300/30", "backdrop-blur-xs", "shadow-md", "shadow-black-500/90");
+    navbar.classList.add(
+      "bg-slate-300/30",
+      "backdrop-blur-xs",
+      "shadow-md",
+      "shadow-black-500/90"
+    );
   } else {
-    navbar.classList.remove("bg-slate-300/30", "backdrop-blur-xs", "shadow-md", "shadow-black-500/90");
+    navbar.classList.remove(
+      "bg-slate-300/30",
+      "backdrop-blur-xs",
+      "shadow-md",
+      "shadow-black-500/90"
+    );
   }
 });
 
-// welcomemassage();
+// Toggle Menu Mobile
+const menuBtn = document.getElementById("menu-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+const hamburgerIcon = document.getElementById("hamburger-icon");
+const closeIcon = document.getElementById("close-icon");
+
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+  hamburgerIcon.classList.toggle("hidden");
+  closeIcon.classList.toggle("hidden");
+  if (hamburgerIcon.classList.contains("hidden")) {
+    navbar.classList.add("bg-white", "shadow-md", "shadow-black-500/90");
+  } else {
+    navbar.classList.remove("bg-white", "shadow-md", "shadow-black-500/90");
+  }
+});
+
+welcomemassage();
 // welcome message
 function welcomemassage() {
   // prompt user for their name
@@ -23,17 +52,44 @@ function welcomemassage() {
 
 // form validation
 function validateForm() {
-  // get form values
-  let name = document.getElementById("name").value;
-  let email = document.getElementById("email").value;
-  let message = document.getElementById("message").value;
+  // Ambil nilai input
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const message = document.getElementById("message").value.trim();
 
-  // simple validation
-  if (name === "" || email === "" || message === "") {
-    // show alert if any field is empty
-    alert("Please fill in all fields.");
-  } else {
-    // show thank you message
-    alert("Thank you for your message, " + name + "!");
+  // Validasi sederhana
+  if (name === "") {
+    alert("Nama wajib diisi!");
+    return;
   }
+
+  if (email === "" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alert("Masukkan email yang valid!");
+    return;
+  }
+
+  if (message.length < 10) {
+    alert("Pesan minimal 10 karakter!");
+    return;
+  }
+
+  // Kalau semua valid → tampilkan pesan sukses
+  alert(
+    "Pesan berhasil dikirim!\n\n" +
+      "Nama: " +
+      name +
+      "\n" +
+      "Email: " +
+      email +
+      "\n" +
+      "Telepon: " +
+      phone +
+      "\n" +
+      "Pesan: " +
+      message
+  );
+
+  // Reset form
+  document.querySelector("form").reset();
 }
