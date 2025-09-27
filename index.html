@@ -1,188 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spacee</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spacee</title>
+    <!-- css external -->
+    <link rel="stylesheet" href="css/style.css" />
 
-  <!-- css external -->
-  <link rel="stylesheet" href="css/style.css" />
+    <!-- tailwind css -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
 
-  <!-- tailwind css -->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
+  <body>
+    <!-- header content -->
+    <header
+      id="navbar"
+      class="fixed w-full pr-10 pl-5 py-2 z-50 transition-all duration-500">
+      <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <div class="logo text-2xl font-bold text-blue-600"></div>
 
-<body>
-  <!-- header content -->
-  <header id="navbar" class="fixed w-full pr-10 pl-5 py-2 z-50 transition-all duration-500">
-    <div class="container mx-auto flex justify-between items-center">
+        <!-- Navbar Desktop -->
+        <nav class="hidden md:block" id="menu">
+          <ul class="flex gap-6">
+            <li>
+              <a
+                class="border px-5 py-2 rounded hover:bg-blue-100 transition"
+                href="#home">
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                class="border px-5 py-2 rounded hover:bg-blue-100 transition"
+                href="#our-profile">
+                Our Profile
+              </a>
+            </li>
+            <li>
+              <a
+                class="border px-5 py-2 rounded hover:bg-blue-100 transition"
+                href="#portofolio">
+                Portofolio
+              </a>
+            </li>
+            <li>
+              <a
+                class="border px-5 py-2 rounded hover:bg-blue-100 transition"
+                href="#massage-us">
+                Massage Us
+              </a>
+            </li>
+          </ul>
+        </nav>
 
-      <!-- LOGO -->
-      <div class="logo"></div>
+        <!-- Tombol Hamburger -->
+        <div class="md:hidden">
+          <button id="menu-btn" class="text-gray-700 focus:outline-none">
+            <!-- Ikon default (hamburger) -->
+            <svg
+              id="hamburger-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 block"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <!-- Ikon close (X) -->
+            <svg
+              id="close-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 hidden"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
 
-      <!-- NAVBAR -->
-      <nav clas>
-        <ul class="flex gap-10">
+      <!-- Navbar Mobile -->
+      <nav id="mobile-menu" class="hidden md:hidden px-5 pb-4">
+        <ul class="flex flex-col gap-4 mt-4">
           <li>
-            <a class="border px-5 py-2 rounded hover:bg-blue-100 transition" href="#home">Home</a>
+            <a
+              class="border px-5 py-2 rounded hover:bg-blue-100 transition block"
+              href="#home">
+              Home
+            </a>
           </li>
           <li>
-            <a class="border px-5 py-2 rounded hover:bg-blue-100 transition" href="#our-profile">Our Profile</a>
+            <a
+              class="border px-5 py-2 rounded hover:bg-blue-100 transition block"
+              href="#our-profile">
+              Our Profile
+            </a>
           </li>
           <li>
-            <a class="border px-5 py-2 rounded hover:bg-blue-100 transition" href="#portofolio">Portofolio</a>
+            <a
+              class="border px-5 py-2 rounded hover:bg-blue-100 transition block"
+              href="#portofolio">
+              Portofolio
+            </a>
           </li>
           <li>
-            <a class="border px-5 py-2 rounded hover:bg-blue-100 transition" href="#massage-us">Massage Us</a>
+            <a
+              class="border px-5 py-2 rounded hover:bg-blue-100 transition block"
+              href="#massage-us">
+              Massage Us
+            </a>
           </li>
         </ul>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <hr />
+    <hr />
 
-  <!-- main content -->
-  <main>
-    <!-- home content -->
-    <section id="home"
-      class="min-h-[100vh] flex flex-col justify-center items-center bg-gradient-to-b from-blue-200 to-white">
-      <h1 class="text-[50px] font-bold mb-4">
-        Hi <span></span> ,Welcome to The Company
-      </h1>
-      <p class="text-xl text-gray-700 mb-6 text-center max-w-xl">
-        Explore a world of creativity and innovation at this company. Your journey starts here!
-      </p>
-      <a href="#our-profile" class="border px-5 py-2 rounded hover:bg-blue-300 transition">
-        Get Started
-      </a>
-    </section>
+    <!-- main content -->
+    <main>
 
-    <!-- profile content -->
-    <section id="our-profile" class="min-h-[100vh] flex flex-col justify-center items-center bg-white py-16">
-      <div class="p-10 mt-10 rounded-2xl shadow-lg w-full max-w-5xl bg-gradient-to-br from-blue-50 to-white">
-        <h2 class="text-4xl font-bold text-center mb-6 text-blue-400">Company Profile</h2>
-        <div class="flex flex-col md:flex-row items-center gap-8">
-          <img src="https://img.freepik.com/premium-vector/company-concept-illustration_114360-2581.jpg?semt=ais_hybrid&w=740&q=80" alt="Company Banner" class="rounded-xl w-full md:w-1/2 shadow-md" loading="lazy">
-          <div class="flex-1">
-            <p class="mb-4 text-justify text-gray-700 leading-relaxed">
-              Our company operates in the technology sector, focusing on providing modern digital solutions that support business growth and transformation. We believe that technology is the foundation of success in today's digital era.
-            </p>
-            <h3 class="text-2xl font-semibold mt-6 mb-2 text-blue-400 text-center">Vision</h3>
-            <p class="mb-4 text-justify text-gray-700">
-              To be a trusted partner in providing innovative technology solutions that have a positive impact on society and contribute to global business development.
-            </p>
-            <h3 class="text-2xl font-semibold mb-2 text-blue-400 text-center">Mission</h3>
-            <ul class="space-y-4 p-6 rounded-xl bg-gradient-to-r from-blue-100 to-blue-50 shadow border border-blue-200">
-              <li class="flex items-start gap-3">
-                <span class="inline-block mt-1 text-blue-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                </span>
-                <span class="text-gray-700 font-medium">Provide high-quality services based on the latest technology.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="inline-block mt-1 text-blue-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                </span>
-                <span class="text-gray-700 font-medium">Build long-term relationships with customers based on trust.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="inline-block mt-1 text-blue-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                </span>
-                <span class="text-gray-700 font-medium">Deliver continuous innovation for mutual growth.</span>
-              </li>
-            </ul>
+      <!-- home content -->
+      <section
+        id="home"
+        class="min-h-[100vh] flex flex-col justify-center items-center bg-gradient-to-b from-blue-200 to-white">
+        <div class="p-10 mt-10 w-full max-w-5xl block justify-items-center">
+          <h1 class="text-[50px] font-bold mb-4 text-center text-shadow-lg">
+            Hi
+            <span id="username"></span>
+            ,Welcome to The Company
+          </h1>
+          <p class="text-xl text-gray-700 mb-6 text-center max-w-xl">
+            Explore a world of creativity and innovation at this company. Your
+            journey starts here!
+          </p>
+          <a
+            href="#our-profile"
+            class="flex border px-5 py-2 rounded hover:bg-blue-300 transition">
+            Get Started
+          </a>
+        </div>
+      </section>
+
+      <!-- profile content -->
+      <section
+        id="our-profile"
+        class="min-h-[100vh] flex flex-col justify-center items-center bg-white py-16">
+        <div
+          class="p-10 mt-10 rounded-2xl shadow-lg w-full max-w-5xl bg-gradient-to-br from-blue-50 to-white">
+          <h2 class="text-4xl font-bold text-center mb-6 text-blue-400">
+            Our Profile
+          </h2>
+          <div class="flex flex-col md:flex-row items-center gap-8">
+            <img
+              src="https://img.freepik.com/premium-vector/company-concept-illustration_114360-2581.jpg?semt=ais_hybrid&w=740&q=80"
+              alt="Company Banner"
+              class="rounded-xl w-full md:w-1/2 shadow-md"
+              loading="lazy" />
+            <div class="flex-1">
+              <p class="mb-4 text-justify text-gray-700 leading-relaxed">
+                Our company operates in the technology sector, focusing on
+                providing modern digital solutions that support business growth
+                and transformation. We believe that technology is the foundation
+                of success in today's digital era.
+              </p>
+              <h3
+                class="text-2xl font-semibold mt-6 mb-2 text-blue-400 text-center">
+                Vision
+              </h3>
+              <p class="mb-4 text-justify text-gray-700">
+                To be a trusted partner in providing innovative technology
+                solutions that have a positive impact on society and contribute
+                to global business development.
+              </p>
+              <h3 class="text-2xl font-semibold mb-2 text-blue-400 text-center">
+                Mission
+              </h3>
+              <ul
+                class="space-y-4 p-6 rounded-xl bg-gradient-to-r from-blue-100 to-blue-50 shadow border border-blue-200">
+                <li class="flex items-start gap-3">
+                  <span class="inline-block mt-1 text-blue-400">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <span class="text-gray-700 font-medium">
+                    Provide high-quality services based on the latest
+                    technology.
+                  </span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="inline-block mt-1 text-blue-400">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <span class="text-gray-700 font-medium">
+                    Build long-term relationships with customers based on trust.
+                  </span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="inline-block mt-1 text-blue-400">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <span class="text-gray-700 font-medium">
+                    Deliver continuous innovation for mutual growth.
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Portfolio Section -->
-    <section id="portofolio" class="min-h-[100vh] flex flex-col justify-center items-center py-20 px-6 bg-gradient-to-b from-gray-100 to-blue-50">
-      <div class="max-w-6xl mx-auto w-full">
-      <h2 class="text-[50px] font-bold mb-4 text-center mb-12 text-blue-400">Portfolio</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Project Card 1 -->
-        <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition group">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Project A" class="rounded-xl mb-4 w-full h-40 object-cover">
-        <h3 class="font-semibold text-2xl mb-2 text-blue-500">Mobile E-Commerce App</h3>
-        <p class="text-gray-700 mb-4">Developed a modern mobile application for seamless e-commerce experiences, featuring secure payments and intuitive UI.</p>
-        <span class="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-medium">Mobile App</span>
+      <!-- Portfolio Section -->
+      <section
+        id="portofolio"
+        class="min-h-[100vh] flex flex-col justify-center items-center py-20 px-6 bg-gradient-to-b from-gray-100 to-blue-50">
+        <div class="max-w-6xl mx-auto w-full">
+          <h2
+            class="text-[50px] font-bold mb-4 text-center mb-12 text-blue-400">
+            Portfolio
+          </h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Project Card 1 -->
+            <div
+              class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition group">
+              <img
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80"
+                alt="Project A"
+                class="rounded-xl mb-4 w-full h-40 object-cover" />
+              <h3 class="font-semibold text-2xl mb-2 text-blue-500">
+                Mobile E-Commerce App
+              </h3>
+              <p class="text-gray-700 mb-4">
+                Developed a modern mobile application for seamless e-commerce
+                experiences, featuring secure payments and intuitive UI.
+              </p>
+              <span
+                class="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-medium">
+                Mobile App
+              </span>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div
+              class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition group">
+              <img
+                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80"
+                alt="Project B"
+                class="rounded-xl mb-4 w-full h-40 object-cover" />
+              <h3 class="font-semibold text-2xl mb-2 text-blue-500">
+                Web-based Management System
+              </h3>
+              <p class="text-gray-700 mb-4">
+                Created a web platform to streamline company operations,
+                automate workflows, and boost productivity.
+              </p>
+              <span
+                class="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium">
+                Web App
+              </span>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div
+              class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition group">
+              <img
+                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                alt="Project C"
+                class="rounded-xl mb-4 w-full h-40 object-cover" />
+              <h3 class="font-semibold text-2xl mb-2 text-blue-500">
+                Industrial IoT Monitoring
+              </h3>
+              <p class="text-gray-700 mb-4">
+                Implemented IoT solutions for real-time monitoring and analytics
+                of industrial devices, improving efficiency and safety.
+              </p>
+              <span
+                class="inline-block bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-medium">
+                IoT Solution
+              </span>
+            </div>
+          </div>
         </div>
-        <!-- Project Card 2 -->
-        <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition group">
-        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Project B" class="rounded-xl mb-4 w-full h-40 object-cover">
-        <h3 class="font-semibold text-2xl mb-2 text-blue-500">Web-based Management System</h3>
-        <p class="text-gray-700 mb-4">Created a web platform to streamline company operations, automate workflows, and boost productivity.</p>
-        <span class="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium">Web App</span>
-        </div>
-        <!-- Project Card 3 -->
-        <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition group">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Project C" class="rounded-xl mb-4 w-full h-40 object-cover">
-        <h3 class="font-semibold text-2xl mb-2 text-blue-500">Industrial IoT Monitoring</h3>
-        <p class="text-gray-700 mb-4">Implemented IoT solutions for real-time monitoring and analytics of industrial devices, improving efficiency and safety.</p>
-        <span class="inline-block bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-medium">IoT Solution</span>
-        </div>
-      </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- massage us content -->
-    <section id="massage-us" class="min-h-[100vh] flex flex-col justify-center items-center">
-      <h1 class="text-[50px] font-bold mb-5 mt-20 text-gray-650">Massage Us</h1>
-      <form class="flex flex-col gap-4 w-full bg-ye-100 p-8 rounded">
+      <!-- massage us content -->
+      <section
+        id="massage-us"
+        class="min-h-[100vh] flex flex-col justify-center items-center">
+        <h1 class="text-[50px] font-bold mb-5 mt-20 text-gray-650">
+          Massage Us
+        </h1>
+        <form class="flex flex-col gap-4 w-full bg-ye-100 p-8 rounded">
+          <!-- name -->
+          <div class="flex flex-col">
+            <label for="name" class="mb-1 font-semibold">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="border rounded p-2"
+              required />
+          </div>
 
-        <!-- name -->
-        <div class="flex flex-col">
-          <label for="name" class="mb-1 font-semibold">Name:</label>
-          <input type="text" id="name" name="name" class="border rounded p-2" required />
-        </div>
+          <!-- email -->
+          <div class="flex flex-col">
+            <label for="email" class="mb-1 font-semibold">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="border rounded p-2"
+              required />
+          </div>
 
-        <!-- email -->
-        <div class="flex flex-col">
-          <label for="email" class="mb-1 font-semibold">Email:</label>
-          <input type="email" id="email" name="email" class="border rounded p-2" required />
-        </div>
+          <!-- phone number -->
+          <div class="flex flex-col">
+            <label for="phone" class="mb-1 font-semibold">Phone Number:</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="border rounded p-2"
+              required />
+          </div>
 
-        <!-- phone number -->
-        <div class="flex flex-col">
-          <label for="phone" class="mb-1 font-semibold">Phone Number:</label>
-          <input type="tel" id="phone" name="phone" class="border rounded p-2" required />
-        </div>
+          <!-- message -->
+          <div class="flex flex-col">
+            <label for="message" class="mb-1 font-semibold">Message:</label>
+            <textarea
+              id="message"
+              name="message"
+              class="border rounded p-2 resize-none"
+              rows="4"
+              required></textarea>
+          </div>
 
-        <!-- message -->
-        <div class="flex flex-col">
-          <label for="message" class="mb-1 font-semibold">Message:</label>
-          <textarea id="message" name="message" class="border rounded p-2 resize-none" rows="4" required></textarea>
-        </div>
+          <!-- submit button -->
+          <button
+            type="button"
+            onclick="validateForm()"
+            class="border px-5 py-2 rounded bg-blue-300 hover:bg-blue-400 transition">
+            Submit
+          </button>
+        </form>
+      </section>
+    </main>
 
-        <!-- submit button -->
-        <button type="button" onclick="validateForm()"
-          class="border px-5 py-2 rounded bg-blue-300  hover:bg-blue-400 transition">
-          Submit
-        </button>
+    <!-- footer content -->
+    <footer>
+      <p class="text-center p-[20px] bg-black text-white">
+        Copyright &copy; 2025 My Company
+      </p>
+    </footer>
 
-      </form>
-    </section>
-  </main>
-
-  <!-- footer content -->
-  <footer>
-    <p class="text-center p-[20px] bg-black text-white">
-      Copyright &copy; 2025 My Company
-    </p>
-  </footer>
-
-  <!-- javascript external -->
-  <script src="js/script.js"></script>
-</body>
-
+    <!-- javascript external -->
+    <script src="js/script.js"></script>
+  </body>
 </html>
